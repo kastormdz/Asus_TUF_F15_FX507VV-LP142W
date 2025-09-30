@@ -1,6 +1,6 @@
 # Asus TUF Gaming F15 Model FX507VV-LP142W
 
-!(images/asus_tuf_f15.jpg)
+![F15](/images/asus_tuf_f15.jpg)
 
 ### Specs:
 
