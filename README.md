@@ -21,11 +21,32 @@ Ports:
 
 ### Known Problems
 
- Brillo:  no se puede controlar el brillo ni con las teclas de hardware, ni usando ninguna utilidad, ni tirando nros al /sys/class/backlight/
+- Brillo:  no se puede controlar el brillo ni con las teclas de hardware, ni usando ninguna utilidad, ni tirando nros al /sys/class/backlight/
  La unica solucion a esto es agregar a la linea de boot del kernel: 
  ```
  acpi_backlight=native
  ```
+
+- Ethernet Controller  up/down
+
+ ```
+sudo pacman -S r8168
+ ```
+```
+sudo rmmod r8169
+ ```
+
+```
+sudo modprobe r8168
+ ```
+```
+sudo echo "blacklist r8169" > /etc/modprobe.d/r8169_blacklist.conf 
+ ```
+
+
+
+
+
 
 
 
