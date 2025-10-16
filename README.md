@@ -21,31 +21,49 @@ Ports:
 
 ### Known Problems
 
-- Brillo:  no se puede controlar el brillo ni con las teclas de hardware, ni usando ninguna utilidad, ni tirando nros al /sys/class/backlight/
- La unica solucion a esto es agregar a la linea de boot del kernel: 
- ```
- acpi_backlight=native
- ```
+## nVidia Power Management
 
-- Ethernet Controller  up/down
-
- ```
-sudo pacman -S r8168
- ```
-```
-sudo rmmod r8169
- ```
+Crear: 
 
 ```
-sudo modprobe r8168
- ```
+sudo touch /etc/modprobe.d/nvidia.conf
+sudo nvim /etc/modprobe.d/nvidia.conf
+
 ```
-sudo echo "blacklist r8169" > /etc/modprobe.d/r8169_blacklist.conf 
- ```
 
+Agregar:
 
+options nvidia NVreg_PreserveVideoMemoryAllocations=1
+options nvidia-drm modeset=1
+options nvidia NVreg_DynamicPowerManagement=0x02
+options nvidia NVreg_EnableS0ixPowerManagement=1
+options nvidia NVreg_S0ixPowerManagementVideoMemoryThreshold=1024
 
+luego correr: 
 
+```
+sudo update-initramfs -u
+
+```
+Chequear:
+
+```
+cat /proc/driver/nvidia/gpus/0000:01:00.0/power
+
+```
+
+Runtime D3 status:          Enabled (fine-grained)
+Video Memory:               Off
+
+GPU Hardware Support:
+ Video Memory Self Refresh: Supported
+ Video Memory Off:          Supported
+
+S0ix Power Management:
+ Platform Support:          Supported
+ Status:                    Enabled
+
+Notebook Dynamic Boost:     Supported
 
 
 
