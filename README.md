@@ -4,6 +4,7 @@
 
 ### Specs
 
+<samp>
 - Procesador: 
 Intel® Core™ i7-13620H de 13.ª generación, 2,4 GHz (caché de 24 M, hasta 4,9 GHz, 10 núcleos: 6 núcleos P y 4 núcleos E)
 - Gráficos: 
@@ -17,6 +18,7 @@ Ports:
 1x Thunderbolt 4, 1x USB 3.2 Gen 2 Type-C, 2x USB 3.2 Gen 1 Type-A, 1x HDMI 2.1
 - Storage:
 1TB PCIe 4.0 NVMe M.2 SSD
+</samp>
 
 ###  asus-linux.org
 
