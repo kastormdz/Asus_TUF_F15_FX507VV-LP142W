@@ -52,6 +52,7 @@ cat /proc/driver/nvidia/gpus/0000:01:00.0/power
 
 ```
 
+<samp>
 Runtime D3 status:          Enabled (fine-grained)
 Video Memory:               Off
 
@@ -64,7 +65,7 @@ S0ix Power Management:
  Status:                    Enabled
 
 Notebook Dynamic Boost:     Supported
-
+</samp>
 
 
 
