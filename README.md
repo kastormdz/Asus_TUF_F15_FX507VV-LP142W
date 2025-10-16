@@ -18,17 +18,17 @@ Ports:
 - Storage:
 1TB PCIe 4.0 NVMe M.2 SSD
 
-###  asus-linux.org
+##  asus-linux.org
 
-## Dual GPU switch , Power Profiles, Aura (luces del teclado)
+### Dual GPU switch , Power Profiles, Aura (luces del teclado)
 
 [Guia para instalacion en Archlinux o CachyOS](https://asus-linux.org/guides/arch-guide/)
 - guia de asuctl 
 - guia de supergfxctl
 
-### Known Problems
+## Known Problems
 
-## nVidia Power Management
+### nVidia Power Management
 
 Crear: 
 
