@@ -33,12 +33,14 @@ sudo nvim /etc/modprobe.d/nvidia.conf
 
 Agregar:
 
+```
 options nvidia NVreg_PreserveVideoMemoryAllocations=1
 options nvidia-drm modeset=1
 options nvidia NVreg_DynamicPowerManagement=0x02
 options nvidia NVreg_EnableS0ixPowerManagement=1
 options nvidia NVreg_S0ixPowerManagementVideoMemoryThreshold=1024
 
+```
 luego correr: 
 
 ```
@@ -51,6 +53,8 @@ Chequear:
 cat /proc/driver/nvidia/gpus/0000:01:00.0/power
 
 ```
+
+Tendrian que tener una salida asi:
 
 <samp>
 Runtime D3 status:          Enabled (fine-grained)
