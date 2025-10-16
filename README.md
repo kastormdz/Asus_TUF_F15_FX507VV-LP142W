@@ -18,6 +18,13 @@ Ports:
 - Storage:
 1TB PCIe 4.0 NVMe M.2 SSD
 
+###  asus-linux.org
+
+## Dual GPU switch , Power Profiles, Aura (luces del teclado)
+
+[Guia para instalacion en Archlinux o CachyOS](https://asus-linux.org/guides/arch-guide/)
+- guia de asuctl 
+- guia de supergfxctl
 
 ### Known Problems
 
@@ -25,10 +32,8 @@ Ports:
 
 Crear: 
 
-```
-sudo touch /etc/modprobe.d/nvidia.conf
-sudo nvim /etc/modprobe.d/nvidia.conf
-
+``` sudo touch /etc/modprobe.d/nvidia.conf 
+sudo nvim /etc/modprobe.d/nvidia.conf 
 ```
 
 Agregar:
@@ -38,7 +43,7 @@ options nvidia NVreg_PreserveVideoMemoryAllocations=1
 options nvidia-drm modeset=1
 options nvidia NVreg_DynamicPowerManagement=0x02
 options nvidia NVreg_EnableS0ixPowerManagement=1
-options nvidia NVreg_S0ixPowerManagementVideoMemoryThreshold=1024
+options nvidia NVreg_S0ixPowerManagementVideoMemoryThreshold=1024 
 
 ```
 luego correr: 
