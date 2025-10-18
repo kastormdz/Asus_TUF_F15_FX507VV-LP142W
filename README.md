@@ -32,32 +32,25 @@ Ports:
 
 Crear: 
 
-``` sudo touch /etc/modprobe.d/nvidia.conf 
-sudo nvim /etc/modprobe.d/nvidia.conf 
-```
+``` sudo touch /etc/modprobe.d/nvidia.conf
+sudo nvim /etc/modprobe.d/nvidia.conf  ```
 
 Agregar:
 
-```
-options nvidia NVreg_PreserveVideoMemoryAllocations=1
+``` options nvidia NVreg_PreserveVideoMemoryAllocations=1
 options nvidia-drm modeset=1
 options nvidia NVreg_DynamicPowerManagement=0x02
 options nvidia NVreg_EnableS0ixPowerManagement=1
-options nvidia NVreg_S0ixPowerManagementVideoMemoryThreshold=1024 
+options nvidia NVreg_S0ixPowerManagementVideoMemoryThreshold=1024 ```
 
-```
 luego correr: 
 
-```
-sudo update-initramfs -u
+``` sudo update-initramfs -u ```
 
-```
 Chequear:
 
-```
-cat /proc/driver/nvidia/gpus/0000:01:00.0/power
+``` cat /proc/driver/nvidia/gpus/0000:01:00.0/power ```
 
-```
 
 Tendrian que tener una salida asi:
 
