@@ -80,6 +80,9 @@ Notebook Dynamic Boost:     Supported
 
 ### Suspend / Resume Issues
 
+La idea es suspender con una señal de stop a los shell de los DE porque 
+en Wayland se vuelven locos cuando vuelven de la suspension si tenes nVidia
+
 
 ``` 
 sudo vim /etc/systemd/system/desktop-resume.service
@@ -107,9 +110,10 @@ WantedBy=systemd-hibernate.service
 
 ``` 
 sudo vim /etc/systemd/system/desktop-suspend.service
+``` 
 
 
-
+``` 
 [Unit] 
 Description=Suspend desktop
 Before=systemd-suspend.service 
@@ -124,10 +128,13 @@ ExecStart=/usr/local/bin/desktop-shell.sh suspend
 [Install] 
 WantedBy=systemd-suspend.service 
 WantedBy=systemd-hibernate.service 
+``` 
 
-
+``` 
 sudo vim /usr/local/bin/desktop-shell.sh
+``` 
 
+``` 
 #!/bin/bash
 #cosmic
 # cosmic-comp
@@ -147,11 +154,14 @@ resume)
   killall -CONT cosmic-panel
   ;;
 esac
+``` 
 
 
+``` 
 sudo systemctl daemon-reload 
 sudo systemctl enable desktop-suspend
 sudo systemctl enable desktop-resume
+``` 
 
 
 
