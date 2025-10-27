@@ -78,6 +78,80 @@ Notebook Dynamic Boost:     Supported
 </samp>
 
 
+### Suspend / Resume Issues
+
+
+``` 
+sudo vim /etc/systemd/system/desktop-resume.service
+```
+
+
+
+``` 
+[Unit] 
+Description=Resume desktop shell 
+After=systemd-suspend.service 
+After=systemd-hibernate.service 
+After=nvidia-resume.service  
+
+[Service] 
+Type=oneshot 
+ExecStart=/usr/local/bin/desktop-shell.sh resume  
+
+[Install] 
+WantedBy=systemd-suspend.service 
+WantedBy=systemd-hibernate.service
+``` 
+
+
+
+``` 
+sudo vim /etc/systemd/system/desktop-suspend.service
+
+
+
+[Unit] 
+Description=Suspend desktop
+Before=systemd-suspend.service 
+Before=systemd-hibernate.service 
+Before=nvidia-suspend.service 
+Before=nvidia-hibernate.service  
+
+[Service] 
+Type=oneshot 
+ExecStart=/usr/local/bin/desktop-shell.sh suspend  
+
+[Install] 
+WantedBy=systemd-suspend.service 
+WantedBy=systemd-hibernate.service 
+
+
+sudo vim /usr/local/bin/desktop-shell.sh
+
+#!/bin/bash
+#cosmic
+# cosmic-comp
+# cosmic-panel
+#gnome
+# gnome-shell
+#kde
+# plasmashell
+
+case "$1" in
+suspend)
+  killall -STOP cosmic-comp
+  killall -STOP cosmic-panel
+  ;;
+resume)
+  killall -CONT cosmic-comp
+  killall -CONT cosmic-panel
+  ;;
+esac
+
+
+sudo systemctl daemon-reload 
+sudo systemctl enable desktop-suspend
+sudo systemctl enable desktop-resume
 
 
 
