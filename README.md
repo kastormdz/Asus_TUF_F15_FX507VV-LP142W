@@ -50,7 +50,7 @@ options nvidia NVreg_S0ixPowerManagementVideoMemoryThreshold=1024
 luego correr: 
 
 ```
-sudo update-initramfs -u
+sudo mkinitcpio -P 
 ```
 
 Chequear:
@@ -165,3 +165,10 @@ sudo systemctl enable desktop-resume
 
 
 
+https://github.com/robswc/ubuntu-22-nvidia-suspend-fix-script
+
+Setting SYSTEMD_SLEEP_FREEZE_USER_SESSION=true in:
+
+/usr/lib/systemd/system/systemd-suspend.service.d/10-nvidia-no-freeze-session.conf
+
+It works because it prevents user-processes from interfering with system’s sleep operation. Its supposed to be default with version 256, I have no idea why it gets set to false. This solution along with NVreg_PreserveVideoMemoryAllocations=1 and enabling suspend and hibernate services makes suspend reliably
