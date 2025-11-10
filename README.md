@@ -29,6 +29,15 @@ Ports:
 
 [Guia de CachyOS para el manejo de DUAL GPU  (prime-run)](https://wiki.cachyos.org/configuration/dual_gpu/)
 
+❯ glxinfo | grep "renderer string"
+
+OpenGL renderer string: Mesa Intel(R) Graphics (RPL-P)
+
+❯ prime-run glxinfo | grep "renderer string"
+
+OpenGL renderer string: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2
+
+
 #### Limite de carga de la bateria al 80%
 
 ```
