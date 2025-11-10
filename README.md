@@ -23,10 +23,11 @@ Ports:
 #### Dual GPU switch , Power Profiles, Aura (luces del teclado)
 
 
-[Guia para instalacion en Archlinux o CachyOS](https://asus-linux.org/guides/arch-guide/)
+[Guia para instalacion en Archlinux o CachyOS de Asus-Linux.org](https://asus-linux.org/guides/arch-guide/)
 - [guia de asuctl](https://asus-linux.org/manual/asusctl-manual/)
 - [guia de supergfxctl](https://asus-linux.org/manual/supergfxctl-manual/)
 
+[Guia de CachyOS para el manejo de DUAL GPU  (prime-run)](https://wiki.cachyos.org/configuration/dual_gpu/)
 
 #### Limite de carga de la bateria al 80%
 
