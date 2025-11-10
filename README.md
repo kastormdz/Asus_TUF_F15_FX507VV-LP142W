@@ -19,20 +19,54 @@ Ports:
 1TB PCIe 4.0 NVMe M.2 SSD
 
 ##  asus linux stuff
- 
+
 #### Dual GPU switch , Power Profiles, Aura (luces del teclado)
+
 
 [Guia para instalacion en Archlinux o CachyOS](https://asus-linux.org/guides/arch-guide/)
 - [guia de asuctl](https://asus-linux.org/manual/asusctl-manual/)
 - [guia de supergfxctl](https://asus-linux.org/manual/supergfxctl-manual/)
 
+
+#### Limite de carga de la bateria al 80%
+
+```
+yay -s bat-asus-battery-bin
+```
+
+luego correr: 
+
+```
+bat-asus-battery threshold 80
+bat-asus-battery persist
+```
+
+
+
+#### Brillo | Backlight
+
+Si usan la iGPU Intel  agregar parametro en el kernel  en mi caso refind o grub | limine | etc  
+
+```
+i915.enable_dpcd_backlight=1
+```
+
+Si usan la dGPU  (nvidia) por default  (AsusMuxDgpu)
+
+```
+acpi_backlight=native
+```
+
+
+
+
 ## Known Problems
 
-### nVidia Power Management
+### nVidia Power Management si usan la dGPU como default
 
 Crear: 
 
-``` 
+```
 sudo touch /etc/modprobe.d/nvidia.conf
 sudo nvim /etc/modprobe.d/nvidia.conf 
 ```
@@ -165,10 +199,3 @@ sudo systemctl enable desktop-resume
 
 
 
-https://github.com/robswc/ubuntu-22-nvidia-suspend-fix-script
-
-Setting SYSTEMD_SLEEP_FREEZE_USER_SESSION=true in:
-
-/usr/lib/systemd/system/systemd-suspend.service.d/10-nvidia-no-freeze-session.conf
-
-It works because it prevents user-processes from interfering with system’s sleep operation. Its supposed to be default with version 256, I have no idea why it gets set to false. This solution along with NVreg_PreserveVideoMemoryAllocations=1 and enabling suspend and hibernate services makes suspend reliably
