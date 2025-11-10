@@ -72,7 +72,7 @@ acpi_backlight=native
 
 ## Known Problems
 
-### nVidia Power Management si usan la dGPU como default
+### nVidia Power Management si usan la dGPU como default  ( supergfxctl -m AsusMuxDgpu )
 
 Crear: 
 
