@@ -20,8 +20,7 @@ Ports:
 
 ##  asus linux stuff
 
-#### Dual GPU switch , Power Profiles, Aura (luces del teclado)
-
+### Dual GPU switch , Power Profiles, Aura (luces del teclado)
 
 [Guia para instalacion en Archlinux o CachyOS de Asus-Linux.org](https://asus-linux.org/guides/arch-guide/)
 - [guia de asuctl](https://asus-linux.org/manual/asusctl-manual/)
@@ -39,7 +38,7 @@ OpenGL renderer string: Mesa Intel(R) Graphics (RPL-P)
 OpenGL renderer string: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2
 </samp>
 
-#### Limite de carga de la bateria al 80%
+### Limite de carga de la bateria al 80%
 
 ```
 yay -s bat-asus-battery-bin
@@ -54,7 +53,7 @@ bat-asus-battery persist
 
 
 
-#### Brillo | Backlight
+### Brillo | Backlight
 
 Si usan la iGPU Intel  agregar parametro en el kernel  en mi caso refind o grub | limine | etc  
 
